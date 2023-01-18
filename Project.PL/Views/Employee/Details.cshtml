@@ -1,0 +1,75 @@
+﻿@model Progect.BL.Models.EmployeeVM
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div class="block-header">
+    <h2>Details  Employee</h2>
+</div>
+
+
+<div class="form-group">
+    <lable> Id :</lable>
+    <input type="text" class="form-control disaled" asp-for="Id" disabled />
+</div>
+
+<div class="form-group">
+    <lable> Name :</lable>
+    <input type="text" class="form-control" asp-for="Name" disabled />
+
+</div>
+
+<div class="form-group">
+    <lable> Salary :</lable>
+    <input type="number" class="form-control" asp-for="Salary" disabled />
+</div>
+
+<div class="form-group">
+    <lable>HireDate :</lable>
+    <input type="datetime" class="form-control" asp-for="HireDate" disabled />
+</div>
+
+<div class="demo-checkbox">
+    <input type="checkbox" asp-for="IsActive" checked="">
+    <label asp-for="IsActive">IsActive</label>
+</div>
+
+<div class="form-group">
+    <lable>Massage :</lable>
+    <textarea placeholder="Type Your Massage" class="form-control" asp-for="Notes" disabled></textarea>
+</div>
+
+<div class="form-group">
+    <lable> Email :</lable>
+    <input type="email" class="form-control" asp-for="Email" disabled />
+</div>
+
+<div class="form-group">
+    <lable> Address :</lable>
+    <input type="text" class="form-control" asp-for="Address" disabled />
+</div>
+<select asp-for="DepartmentId" asp-items="(SelectList)ViewBag.DepartmentList" disabled>
+    <option>Choose  Department</option>
+
+</select>
+
+
+<select asp-for="DistrictId" asp-items="(SelectList)ViewBag.DistrictList" disabled>
+    <option>Choose  District</option>
+
+</select>
+
+
+<center>
+    <input type="submit" value="Save" class="btn btn-primary" />
+    <input type="reset" value="Cancle" class="btn btn-danger" />
+    <a asp-action="Index" asp-controller="Employee" class="btn btn-warning">Back To Data</a>
+</center>
+
+
+
+@section BootstrapSelect{
+    <link href="~/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+}

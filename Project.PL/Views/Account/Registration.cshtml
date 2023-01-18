@@ -1,0 +1,116 @@
+﻿@model Progect.BL.Models.RegistrationVM
+@{
+    Layout = null;
+}
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Sign Up </title>
+    <!-- Favicon-->
+    <link rel="icon" href="~/favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="~/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="~/plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="~/plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="~/css/style.css" rel="stylesheet">
+</head>
+
+<body class="signup-page">
+    <div class="signup-box">
+        <div class="logo">
+            <a href="javascript:void(0);">Admin<b>BSB</b></a>
+            <small>Admin BootStrap Based - Material Design</small>
+        </div>
+        <div class="card">
+            <div class="body">
+
+                <form asp-controller="Account" asp-action="Registration">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="msg">Register a new membership</div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">person</i>
+                        </span>
+                        <div class="form-line">
+                            <input asp-for="Name" type="text" class="form-control" placeholder="Name Surname" autofocus>
+                        </div>
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">email</i>
+                        </span>
+                        <div class="form-line">
+                            <input asp-for="Email" type="email" class="form-control" placeholder="Email Address">
+                        </div>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">lock</i>
+                        </span>
+                        <div class="form-line">
+                            <input asp-for="Password" type="password" class="form-control" minlength="6" placeholder="Password">
+                        </div>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">lock</i>
+                        </span>
+                        <div class="form-line">
+                            <input asp-for="ConfirmPassword" type="password" class="form-control" placeholder="Confirm Password">
+                        </div>
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="IsAgree" type="checkbox" class="filled-in chk-col-pink">
+                        <label asp-for="IsAgree">I read and agree to the <a href="javascript:void(0);">terms of usage</a>.</label>
+                    </div>
+
+
+
+                    <input type="submit" value="SIGN UP" class="btn btn-block btn-lg bg-pink waves-effect" />
+                    <div class="m-t-25 m-b--5 align-center">
+
+                        <a asp-controller="Account" asp-action="Login">You already have a membership?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery Core Js -->
+    <script src="~/plugins/jquery/jquery.min.js"></script>
+    <!-- Validation Plugin Js -->
+    <script src="~/plugins/jquery-validation/jquery.validate.js"></script>
+    <script src="~/plugins/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <!-- Bootstrap Core Js -->
+    <script src="~/plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="~/plugins/node-waves/waves.js"></script>
+
+
+
+    <!-- Custom Js -->
+    <script src="~/js/admin.js"></script>
+    <script src="~/js/pages/examples/sign-up.js"></script>
+</body>
+
+</html>

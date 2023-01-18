@@ -1,0 +1,87 @@
+﻿@model Progect.BL.Models.EmployeeVM
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="block-header">
+    <h2>Update  Employee</h2>
+</div>
+
+<form asp-action="Edit" asp-controller="Employee" class="form-group">
+    <div asp-validation-summary="All" class="bg-danger"></div>
+
+    <div class="form-group">
+        <lable> Name :</lable>
+        <input type="text" class="form-control" asp-for="Name" />
+        <span asp-validation-for="Name" class="text-danger bg-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <lable> Salary :</lable>
+        <input type="number" class="form-control" asp-for="Salary" />
+        <span asp-validation-for="Salary" class="text-danger bg-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <lable> Email :</lable>
+        <input type="email" class="form-control" asp-for="Email" />
+        <span asp-validation-for="Email" class="text-danger bg-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <lable>HireDate :</lable>
+        <input type="date" class="form-control" asp-for="HireDate" />
+        <span asp-validation-for="HireDate" class="text-danger bg-danger"></span>
+    </div>
+    <div class="form-group">
+        <lable> Address :</lable>
+        <input type="text" class="form-control" asp-for="Address" />
+        <span asp-validation-for="Address" class="text-danger bg-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <lable>Massage :</lable>
+        <textarea rows="4" placeholder="Type Your Massage" class="form-control" asp-for="Notes"></textarea>
+        <span asp-validation-for="Notes" class="text-danger bg-danger"></span>
+    </div>
+
+    <div class="demo-checkbox">
+        <input type="checkbox" asp-for="IsActive" checked="">
+        <label asp-for="IsActive">IsActive</label>
+        <span asp-validation-for="IsActive" class="text-danger"></span>
+    </div>
+
+    <select asp-for="DepartmentId" asp-items="(SelectList)ViewBag.DepartmentList">
+        <option>Choose  Department</option>
+
+    </select>
+    <select asp-for="DistrictId" asp-items="(SelectList)ViewBag.DistrictList" >
+        <option>Choose  District</option>
+
+    </select>
+
+    @*<div class="form-group">
+        <lable>Photo :</lable>
+        <input type="file" class="form-control" asp-for="Photo" />
+    </div>
+    <div class="form-group">
+        <lable>Cv :</lable>
+        <input type="file" class="form-control" asp-for="Cv" />
+    </div>*@
+
+
+    <center>
+        <input type="submit" value="Edite" class="btn btn-primary" />
+        <input type="reset" value="Cancle" class="btn btn-danger" />
+        <a asp-action="Index" asp-controller="Employee" class="btn btn-warning">Back To Data</a>
+    </center>
+</form>
+@section jqueryValidation{
+
+    <script src="~/plugins/jquery-validation/jquery.validate.js"></script>
+    <script src="~/plugins/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}
+
+@section BootstrapSelect{
+    <link href="~/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+}

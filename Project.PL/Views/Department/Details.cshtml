@@ -1,0 +1,34 @@
+﻿@model Progect.BL.Models.DepartmentVM
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div class="block-header">
+    <h2>Department Details</h2>
+</div>
+
+
+<div class="form-group">
+    <lable>Department Id :</lable>
+    <input type="text" class="form-control disaled" asp-for="Id" disabled/>
+</div>
+
+<div class="form-group">
+    <lable>Department Name :</lable>
+    <input type="text" class="form-control disabled" asp-for="Name" disabled/>
+</div>
+
+<div class="form-group">
+    <lable>Department Code :</lable>
+    <input type="text" class="form-control disabled" asp-for="Code" disabled/>
+</div>
+
+<center>
+    <a asp-action="Index" asp-controller="Department"  class="btn btn-primary">Back To Data</a>
+    <a asp-action="Edit" asp-controller="Department" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
+    <a asp-action="Delete" asp-controller="Department" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>
+
+
+</center>

@@ -1,0 +1,59 @@
+﻿@inject Progect.BL.Interface.IEmployeeRep employee
+@inject Progect.BL.Interface.IDepartmentRep department
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    tr, td, th {
+        text-align: center;
+    }
+</style>
+<h2>Index</h2>
+
+<div class="container">
+    <h1>Employees</h1>
+    <table class="table table-bordered table-condensed table-hover ">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Salary</th>
+        </tr>
+
+
+        @foreach (var item in employee.Get())
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Salary</td>
+
+            </tr>
+        }
+
+
+    </table>
+</div>
+
+<div class="container">
+    <h1>Departments</h1>
+    <table class="table table-bordered table-condensed table-hover ">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Code</th>
+        </tr>
+
+
+        @foreach (var item in department.Get())
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Code</td>
+
+            </tr>
+        }
+
+
+    </table>
+</div>
