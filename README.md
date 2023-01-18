@@ -8,7 +8,7 @@
  ❖	Worked With Controls (Data Table , Jtable). 
  ❖	Filtration Using Ajax Request. 
  ❖	Paging , Search , Sorting , Filter. 
- ❖	View Injection. 
+ ❖	View Injection. .
  ❖	Globalization With Resource Files. 
  ❖	Seperate All Project Modules With (MVC AREA).
  ❖	Upload And Delete Files. ❖	Send Mail (SMTP). 
